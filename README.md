@@ -36,12 +36,11 @@ Log_Close();
 
 Error(x) outputs the file path and line in code where something went wrong.
 ```
-HRESULT hr = something();
-	if (hr != S_OK)
-	{
+HRESULT hr = someFunction();
+	if (hr != S_OK) {
 		Log_Open("debug.log");
 		Error(hr);
-		Log_Write("We have problem here.");
+		Log_Write("Advanced description (if needed).");
 		Log_Close();
 	}
 ```
@@ -51,6 +50,24 @@ Output line in log file looks somewhat like this:
 
 ```
 Logging: Func: hr in file: main.cpp on line 27
+Advanced description (if needed).
+```
+
+### Logging errors with macro
+
+To make debugging easier, you can use macro like this:
+```
+#define CHECK_RESULT(val)\
+	if(val != S_OK){\
+		Log_Open("debug.log");\
+		Error(val);\
+		Log_Close();\
+		__debugbreak();\
+	}
+```
+```
+HRESULT hr = someFunction();
+CHECK_RESULT(hr);
 ```
 
 ### Optional functions
