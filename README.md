@@ -1,14 +1,14 @@
 # Logger
 
-Basic C++ Logger, nothing more, nothing less. It's not the prettiest solution but it works.
+Abandoned implementation of basic C++ logger for MSVC.
 
 ## Instructions
 
-Hopefully, this simple explanation will make life easier for anybody who decided to use this code and don't want to spend too much time into looking of how this Logger works.
+Hopefully, these simple instructions will make life easier for anybody who decided to use this code and don't want to spend too much time looking into details of how this Logger works.
 
 ### Log_WriteIn
 
-Function Log_WriteIn adds to log file string of text and finishes it with line break. Two parameters *std::string text* and *std::string filename* are used for your text and name of your log file.
+Function Log_WriteIn adds to log file string of text plus a line break. Two parameters *std::string text* and *std::string filename* are used for your text and name of your log file.
 
 ```
 Log_WriteIn("Hello World!", "debug.log");
@@ -16,7 +16,7 @@ Log_WriteIn("Hello World!", "debug.log");
 
 ### Log_Open and Log_Close
 
-Function Log_Open requires only one parameter and that is name of your log file. Function Log_Close closes it.
+Function Log_Open requires only one parameter - name of your log file. Function Log_Close closes the filehandle.
 
 ```
 Log_Open("debug.log");
@@ -25,7 +25,7 @@ Log_Close();
 
 ### Log_Write
 
-Function Log_Write does exactly the same thing as Log_WriteIn, it logs text but in order to do that it also requires to have log file accessible. It uses only parameter for string.
+Function Log_Write does exactly the same thing as Log_WriteIn, it logs text but in order to do that it also requires to have log file accessible with opened filehandle. It uses only one parameter for text string.
 ```
 Log_Open("debug.log");
 Log_Write("Hello World!");
@@ -46,7 +46,7 @@ HRESULT hr = someFunction();
 ```
 
 
-Output line in log file looks somewhat like this:
+Output line in log file then looks somewhat like this:
 
 ```
 Logging: Func: hr in file: main.cpp on line 27
@@ -55,7 +55,7 @@ Advanced description (if needed).
 
 ### Logging errors with macro
 
-To make debugging easier, you can use macro like this:
+To make debugging easier, you can use macro similar to this one:
 ```
 #define CHECK_RESULT(val)\
 	if(val != S_OK){\
@@ -72,4 +72,4 @@ CHECK_RESULT(hr);
 
 ### Optional functions
 
-Log_Init and Log_End are completely optional, they don't do much except they add some text in the beginning and at the end of log file. Log_Init function also clears anything that was stored in log file before, so keep that in mind. I found this to be useful, however they can be both simply replaced by Log_WriteIn if needed.
+Log_Init and Log_End are completely optional, they don't do much except they add some text in the beginning and at the end of log file. Log_Init function also clears anything that was stored in log file before. These functions can be both simply replaced by Log_WriteIn function if needed.
