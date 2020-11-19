@@ -1,6 +1,6 @@
 /*
  * Logger
- * Copyright (c) 2018 Ivan Kmeťo
+ * Copyright (c) 2018 - 2020 Ivan Kmeťo
  *
  * Licensed under the MIT License.
  * http://opensource.org/licenses/mit-license
