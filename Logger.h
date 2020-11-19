@@ -4,11 +4,12 @@
  *
  * Licensed under the MIT License.
  * http://opensource.org/licenses/mit-license
-*/
+ */
 
 #pragma once
 
 #include <iostream>
+
 
 void Logger(std::string func, std::string file, int line);
 
