@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT License.
  * http://opensource.org/licenses/mit-license
-*/
+ */
 
 #include <string>
 #include <fstream>
