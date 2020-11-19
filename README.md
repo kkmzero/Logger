@@ -1,6 +1,6 @@
 # Logger
 
-Abandoned implementation of basic C++ logger for MSVC.
+Abandoned implementation of basic C++ logger for MSVC projects.
 
 ## Instructions
 
