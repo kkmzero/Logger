@@ -1,10 +1,10 @@
 # Logger
 
-Abandoned implementation of basic C++ logger for MSVC projects.
+Abandoned implementation of basic C++ logging utility for MSVC projects.
 
 ## Instructions
 
-Hopefully, these simple instructions will make life easier for anybody who decided to use this code and don't want to spend too much time looking into details of how this Logger works.
+Hopefully, these simple instructions will make life easier for anybody who decided to use this code and don't want to spend too much time looking into details of how it works.
 
 ### Log_WriteIn
 
